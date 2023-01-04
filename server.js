@@ -17,9 +17,8 @@ const writeFileAsync = util.promisify(fs.writeFile);
 //API routes | GET
 
 app.get('/api/notes', (req, res) => {
-    readFileAsync("./db/db.json", "utf8")
-    .then(function(data){
-        notes = [].concat(JSON.parse(data))
+    readFileAsync("./db/db.json", "utf8").then(function(data) {
+        const notes = [].concat(JSON.parse(data))
         res.json(notes);
     })
 });
@@ -35,13 +34,13 @@ app.post("/api/notes", (req, res) => {
     return notes
     }).then(function(notes){
         writeFileAsync("./db/db.json", JSON.stringify(notes))
-        res,json(note);
+        res.json(note);
     })
 })
 
 // API routes | DELETE
 
-app.delete("/api/nots/:id", (req, res) => {
+app.delete("/api/notes/:id", (req, res) => {
     const idToDelete = parseInt(req.params.id);
     readFileAsync("./db/db.json", "utf8").then(function(data) {
         const notes = [].concat(JSON.parse(data));
