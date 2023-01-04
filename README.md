@@ -5,8 +5,6 @@
 
 Heroku Link: [https://salty-taiga-33008.herokuapp.com/]
 
-Github via Heroku: [https://git.heroku.com/salty-taiga-33008.git]
-
 Here is the link to the github repository: [https://github.com/godwingi/note-taker]
 
 ## Installation
